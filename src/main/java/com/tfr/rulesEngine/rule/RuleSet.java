@@ -13,7 +13,7 @@ import java.util.TreeSet;
  * Created by Erik on 6/14/2017.
  */
 //TODO R extends Rule<I,O>
-public abstract class RuleSet<I,O,R extends Rule<I,O>> extends TreeSet<R> {
+public abstract class RuleSet<I,O> extends TreeSet<Rule<I,O>> {
 
     private String name;
 
@@ -21,7 +21,7 @@ public abstract class RuleSet<I,O,R extends Rule<I,O>> extends TreeSet<R> {
         this.name = name;
     }
 
-    public RuleSet(String name, Set<R> rules) {
+    public <R extends Rule<I,O>> RuleSet(String name, Set<R> rules) {
         this.name = name;
         addAll(rules);
     }
@@ -31,7 +31,7 @@ public abstract class RuleSet<I,O,R extends Rule<I,O>> extends TreeSet<R> {
     }
 
     @Override
-    public boolean add(R rule) {
+    public boolean add(Rule<I,O> rule) {
         boolean addedSuccessfully = super.add(rule);
         if(!addedSuccessfully) {
             throw new DuplicateRuleException(rule);

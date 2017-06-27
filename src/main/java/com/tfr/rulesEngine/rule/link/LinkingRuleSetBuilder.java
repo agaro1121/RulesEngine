@@ -7,7 +7,7 @@ import com.tfr.rulesEngine.rule.RuleSetBuilder;
  *
  * Created by Erik on 6/25/2017.
  */
-public class LinkingRuleSetBuilder<I,O> extends RuleSetBuilder<I,O, LinkingRule<I,O>> {
+public class LinkingRuleSetBuilder<I,O> extends RuleSetBuilder<I,O> {
 
     private String name;
 
@@ -16,7 +16,7 @@ public class LinkingRuleSetBuilder<I,O> extends RuleSetBuilder<I,O, LinkingRule<
     }
 
     @Override
-    public RuleSet<I, O, LinkingRule<I, O>> build() {
+    public RuleSet<I, O> build() {
         return new LinkingRuleSet<I, O>(name, rules);
     }
 }

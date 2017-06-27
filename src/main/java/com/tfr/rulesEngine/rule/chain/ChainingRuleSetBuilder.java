@@ -7,7 +7,7 @@ import com.tfr.rulesEngine.rule.RuleSetBuilder;
  *
  * Created by Erik on 6/25/2017.
  */
-public class ChainingRuleSetBuilder<I> extends RuleSetBuilder<I,I, ChainingRule<I>> {
+public class ChainingRuleSetBuilder<I> extends RuleSetBuilder<I,I> {
 
     public ChainingRuleSetBuilder(String name) {
         super(name);
@@ -18,7 +18,7 @@ public class ChainingRuleSetBuilder<I> extends RuleSetBuilder<I,I, ChainingRule<
     }*/
 
     @Override
-    public RuleSet<I, I, ChainingRule<I>> build() {
+    public RuleSet<I, I> build() {
         return new ChainingRuleSet<I>(name, rules);
     }
 }

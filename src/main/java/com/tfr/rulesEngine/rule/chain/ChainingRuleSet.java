@@ -8,7 +8,7 @@ import java.util.Set;
  *
  * Created by Erik Hage on 6/17/2017.
  */
-public class ChainingRuleSet<I> extends RuleSet<I,I, ChainingRule<I>> {
+public class ChainingRuleSet<I> extends RuleSet<I,I> {
 
     public ChainingRuleSet(String name) {
         super(name);
